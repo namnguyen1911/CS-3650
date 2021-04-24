@@ -1,0 +1,118 @@
+class Main {
+    function void main() {
+        var boolean exit;
+        var int user;
+        var int computer;
+        var Random seed;
+        
+        
+
+        let seed = Random.new(0,1,1);
+        let exit = true;
+
+
+        while(exit) {
+            do Output.printString("Options:");
+            do Output.println();
+            do Output.printString("1. Rock");
+            do Output.println();
+            do Output.printString("2. Paper");
+            do Output.println();
+            do Output.printString("3. Scissor");
+            do Output.println();
+            do Output.printString("4. Exit");
+            do Output.println();
+            let user = Keyboard.readInt("Enter your choice: ");   
+
+            if(user = 1)
+            {
+                do Output.printString("You chose Rock");
+                do Output.println();
+                let computer = seed.rand(3);
+
+                if(computer = 0)
+                {
+                    do Output.printString("Computer is Rock. ");
+                    do Output.printString("Draw.");
+                    do Output.println();
+                }
+
+                if(computer = 1)
+                {
+                    do Output.printString("Computer is Paper. ");
+                    do Output.printString("Computer won.");
+                    do Output.println();
+                }
+
+                if(computer = 2)
+                {
+                    do Output.printString("Computer is Scissor. ");
+                    do Output.printString("You won.");
+                    do Output.println();
+                }
+            }
+
+            if(user = 2)
+            {
+                do Output.printString("You chose Paper");
+                do Output.println();
+                let computer = seed.rand(3);
+
+                if(computer = 0)
+                {
+                    do Output.printString("Computer is Rock. ");
+                    do Output.printString("You won.");
+                    do Output.println();
+                }
+
+                if(computer = 1)
+                {
+                    do Output.printString("Computer is Paper. ");
+                    do Output.printString("Draw.");
+                    do Output.println();
+                }
+
+                if(computer = 2)
+                {
+                    do Output.printString("Computer is Scissor. ");
+                    do Output.printString("Computer won.");
+                    do Output.println();
+                }
+            }
+
+            if(user = 3)
+            {
+                do Output.printString("You chose Scissor");
+                do Output.println();
+                let computer = seed.rand(3);
+
+                if(computer = 0)
+                {
+                    do Output.printString("Computer is Rock. ");
+                    do Output.printString("Computer won.");
+                    do Output.println();
+                }
+
+                if(computer = 1)
+                {
+                    do Output.printString("Computer is Paper. ");
+                    do Output.printString("You won.");
+                    do Output.println();
+                }
+
+                if(computer = 2)
+                {
+                    do Output.printString("Computer is Scissor. ");
+                    do Output.printString("Draw.");
+                    do Output.println();
+                }
+            }
+
+            if(~(user = 1) & ~(user = 2) & ~(user = 3)){
+                let exit = false;
+            }
+
+        }
+        return;
+    }
+}

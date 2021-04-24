@@ -1,0 +1,48 @@
+class Random {
+    static int seed, multiplier, inc;
+
+    function void new(int newSeed, int newMul, int newInc) {
+        let seed = newSeed;
+        let multiplier = newMul;
+        let inc = newInc;
+        return;
+    }
+
+    function int mod(int a , int b)
+    {
+        if(a < b & a > 0) {
+            return a;
+        }
+        
+        while(a > b | a = b) {
+            let a = a - b;
+        }
+
+        return a;
+    }
+
+    method void updateSeed(int range) {
+        if(seed > range | seed = range) {
+            let seed = 0;
+        }
+        else {
+            let seed = seed + 1;
+        }
+        return;
+    }
+
+    method int rand(int range) {
+        var int result;
+        let result = Random.mod((seed*multiplier) + inc,range);
+        do updateSeed(range);
+        return result;
+        
+    }
+
+    
+
+
+
+    
+
+}
